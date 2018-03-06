@@ -1,0 +1,16 @@
+<?php
+
+$action="login";
+if (isset($_REQUEST['action'])){$action=$_REQUEST['action'];}
+
+//因为include，要求所有使用路径的地方都用$_SERVER['DOCUMENT_ROOT'].'Freight'前缀避免该入口文件所在目录与include文件所在目录不同引起的资源无法引用找不到路径的问题
+switch ($action){
+    case "login":
+        include "pages/login.php";
+        break;
+    case "register":
+        include "controllers/register.php";
+        break;
+}
+
+?>
